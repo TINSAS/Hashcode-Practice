@@ -25,6 +25,8 @@ public class Output {
             researchLastIndex(Pizza, PizzaTri.get(i),T);
         }  
         Collections.sort(T);
-        System.out.println(T);
+        for(int i=0;i<T.size();i++){
+            System.out.print(T.get(i)+" ");
+        }
     }
 }
