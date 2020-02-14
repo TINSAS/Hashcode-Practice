@@ -5,6 +5,7 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -14,8 +15,10 @@ import java.util.logging.Logger;
  */
 public class Input {
 
-    public static Pair input(ArrayList<Integer> Pizza,ArrayList<Integer> PizzaTri){
+    public static Retour input(){
         int N=-1,M=-1;
+        ArrayList<Integer> Pizza = new ArrayList<>(),
+                PizzaTri = new ArrayList<>();
         
         BufferedReader reader = null;
         try {
@@ -30,8 +33,11 @@ public class Input {
             T = S.split(" ");
             for (int i = 0; i < N; i++) {
                 Pizza.add(Integer.valueOf(T[i]));
-            }   PizzaTri = Pizza;
+            }   
+            PizzaTri = (ArrayList<Integer>)Pizza.clone();
             Collections.sort(PizzaTri);
+            
+
         } catch (FileNotFoundException ex) {
             Logger.getLogger(Input.class.getName()).log(Level.SEVERE, null, ex);
         } catch (IOException ex) {
@@ -43,6 +49,6 @@ public class Input {
                 Logger.getLogger(Input.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
-        return new Pair(M,N);
+        return new Retour(M,N, Pizza, PizzaTri);
     }
 }
