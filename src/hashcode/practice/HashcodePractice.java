@@ -38,6 +38,7 @@ public class HashcodePractice {
         
         ArrayList<Integer> soluc = trouveSolution(parts, n, m);
         System.out.println(Arrays.toString(soluc.toArray()));
+        Output.output(partsSansTri, soluc);
 
         
         
