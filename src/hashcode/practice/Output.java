@@ -6,21 +6,25 @@
 package hashcode.practice;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 /**
  *
  * @author Benoît
  */
 public class Output {
-    public static void researchLastIndex(ArrayList<Integer> Pizza, int Index){
-        System.out.print(Pizza.indexOf(Index)+" ");
+    public static void researchLastIndex(ArrayList<Integer> Pizza, int Index, ArrayList<Integer> T){
+        T.add(Pizza.indexOf(Index));
         Pizza.set(Pizza.indexOf(Index), -1);
     }
     
     public static void output(ArrayList<Integer> Pizza,ArrayList<Integer> PizzaTri){
         System.out.println(PizzaTri.size());
+        ArrayList<Integer> T=new ArrayList<Integer>();
         for (int i=0;i<PizzaTri.size();i++){
-            researchLastIndex(Pizza, PizzaTri.get(i));
+            researchLastIndex(Pizza, PizzaTri.get(i),T);
         }  
+        Collections.sort(T);
+        System.out.println(T);
     }
 }
