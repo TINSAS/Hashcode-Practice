@@ -15,7 +15,7 @@ public class Score {
     public static int score(ArrayList<Integer> Pizza, int M){
       int S=0;
         for(int i=0;i<Pizza.size();i++){
-            S=S+Pizza.get(i);
+            S+=Pizza.get(i);
         }
         if(S<=M){
             return S;

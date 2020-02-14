@@ -24,7 +24,7 @@ public class Input {
         try {
             String S;
             int Length = 0;
-            reader = new BufferedReader(new FileReader("c_medium.in"));
+            reader = new BufferedReader(new FileReader("d_quite_big.in"));
             S = reader.readLine();
             M = Integer.valueOf(S.substring(0, S.indexOf(" ")));
             N = Integer.valueOf(S.substring(S.indexOf(" ") + 1, S.length()));
