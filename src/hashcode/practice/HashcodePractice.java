@@ -19,17 +19,22 @@ public class HashcodePractice {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        ArrayList<Integer> parts = new ArrayList<>();
-        parts.add(2);
+        /*parts.add(2);
         parts.add(5);
         parts.add(6);
-        parts.add(8);
+        parts.add(8);*/
         
-        int m=17;
-        int n=4;
+        Retour retour = Input.input();
+        
+        int m=retour.M;
+        int n=retour.N;
+        ArrayList<Integer> parts = retour.pizzaTri;
+        ArrayList<Integer> partsSansTri = retour.pizza;
+
         
         Collections.sort(parts);
-        System.out.println("Parts :" + Arrays.toString(parts.toArray()));
+        System.out.println("Parts :" + Arrays.toString(partsSansTri.toArray()));
+        System.out.println("Parts Trié:" + Arrays.toString(parts.toArray()));
         
         ArrayList<Integer> soluc = trouveSolution(parts, n, m);
         System.out.println(Arrays.toString(soluc.toArray()));
@@ -46,6 +51,7 @@ public class HashcodePractice {
         int part;
         for (int i = nbParts-1; i >= 0; i--) {
             part = parts.get(i);
+            System.out.println(""+part);
             if(part+somme<=maxParts){
                 partsChoisis.add(part);
                 somme+= part;
