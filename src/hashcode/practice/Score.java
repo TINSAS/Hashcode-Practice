@@ -5,10 +5,22 @@
  */
 package hashcode.practice;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author Benoît
  */
 public class Score {
-    
+    public static int score(ArrayList<Integer> Pizza, int M){
+      int S=0;
+        for(int i=0;i<Pizza.size();i++){
+            S=S+Pizza.get(i);
+        }
+        if(S<=M){
+            return S;
+        }else{
+            return -1;
+        }
+    }
 }
